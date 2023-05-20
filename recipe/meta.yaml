@@ -1,18 +1,18 @@
 {% set name = "hazm" %}
-{% set version = "0.7.0" %}
+{% set version = "0.9.0" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: acb050198d8f80cc279cc66dc8438f9f5a57f8d1e5680a2826289ab03cfbb30f
+  sha256: 6b34c460fd450eeb27783795466945516b5dff53d21c60e8d7212ebada513475
 
 build:
   skip: true  # [win]
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
+  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
 
 requirements:
   host:
