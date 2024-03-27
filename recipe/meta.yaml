@@ -1,5 +1,5 @@
 {% set name = "hazm" %}
-{% set version = "0.7.0" %}
+{% set version = "0.10.0" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,21 +7,28 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: acb050198d8f80cc279cc66dc8438f9f5a57f8d1e5680a2826289ab03cfbb30f
+  sha256: a356543004630a9338cc09f6725a30f9928cdabda9353092bd21585b4329a97d
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.8,<4.0
+    - poetry >=1.8.2,<1.9
   run:
-    - libwapiti >=0.2.1
-    - nltk >=3.3
-    - python >=3.6
+    - nltk >=3.8.1,<4.0.0
+    - gensim >=4.3.1,<5.0.0
+    - python-crfsuite >=0.9.9,<0.10.0
+    - numpy ==1.24.3
+    - scikit-learn >=1.2.2,<2.0.0
+    - fasttext >=0.9.2,<0.10.0
+    - flashtext >=2.7,<3.0
+    - poetry >=1.8.2,<1.9
+    - python >=3.8,<4.0
 
 test:
   imports:
