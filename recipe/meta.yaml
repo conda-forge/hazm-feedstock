@@ -1,5 +1,5 @@
 {% set name = "hazm" %}
-{% set version = "0.10.0" %}
+{% set version = "0.11.0" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: a356543004630a9338cc09f6725a30f9928cdabda9353092bd21585b4329a97d
+  sha256: 098f1318a70b6388dc2f39cae68327722c88b057848e72d07f6b8b2cae27b5fa
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
 
 requirements:
